@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         else if (health <= 0)
         {
             health = 0f;
-            //SceneManager.LoadScene("GameLose");
+
             GameLoseUI.SetActive(true);
             if (GameLoseUI == true)
             {
