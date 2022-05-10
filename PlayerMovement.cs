@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementMobile : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
@@ -23,17 +23,13 @@ public class PlayerMovementMobile : MonoBehaviour
     void Update()
     {
         //Movement
-         
-        movement.x = joystick.Horizontal * moveSpeed;
-        Debug.Log("move");
-        movement.y = joystick.Vertical * moveSpeed;
-        Debug.Log("move");
+        
 
-        /*movement.x = Input.GetAxisRaw("Horizontal");
+        movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        */
+        
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
